@@ -41,13 +41,13 @@ export default defineConfig((env) => {
       minify: 'esbuild',
       assetsDir: 'static/assets',
       // 静态资源打包到dist下的不同目录
-      rollupOptions: {
+      /* rollupOptions: {
         output: {
           chunkFileNames: 'static/js/[name]-[hash].js',
           entryFileNames: 'static/js/[name]-[hash].js',
           assetFileNames: 'static/[ext]/[name]-[hash].[ext]',
         },
-      },
+      }, */
     },
     css: {
       preprocessorOptions: {
