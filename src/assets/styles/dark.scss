@@ -1,0 +1,17 @@
+// @import 'element-plus/theme-chalk/dark/css-vars.css';
+
+body {
+  // @apply text-gray-700 dark: bg-gray-800 dark:text-gray-200;
+  .text-gray-700 {
+    --tw-text-opacity: 1;
+    color: rgba(55, 65, 81, var(--tw-text-opacity));
+  }
+  .dark [dark~='bg-gray-800'] {
+    --tw-bg-opacity: 1;
+    background-color: rgba(31, 41, 55, var(--tw-bg-opacity));
+  }
+  .dark .dark [dark~='dark:text-gray-200'] {
+    --tw-text-opacity: 1;
+    color: rgba(229, 231, 235, var(--tw-text-opacity));
+  }
+}

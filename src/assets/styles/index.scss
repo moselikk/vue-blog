@@ -1,0 +1,142 @@
+@import '@/assets/styles/nprogress.scss';
+@import '@/assets/styles/markdown.scss';
+// @import '@/assets/styles/dark.scss';
+@import 'element-plus/theme-chalk/dark/css-vars.css';
+
+/**
+ * Reset some basic elements
+ */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+hr,
+dl,
+dd,
+ol,
+ul,
+figure {
+  margin: 0;
+  padding: 0;
+}
+
+/**
+  * Basic styling
+  */
+body {
+  /*font: $base-font-weight #{$base-font-size}/#{$base-line-height} $base-font-family;*/
+  font-family: $base-font-family;
+  font-size: $base-font-size;
+  line-height: $base-line-height;
+  color: $text-color;
+  background-color: $background-color-gray;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-feature-settings: 'kern' 1;
+  -moz-font-feature-settings: 'kern' 1;
+  -o-font-feature-settings: 'kern' 1;
+  font-feature-settings: 'kern' 1;
+  font-kerning: normal;
+  text-rendering: optimizeLegibility;
+  // text-align: justify;
+  // text-justify: auto;
+}
+
+h1 {
+  font-size: 1.5em;
+}
+h2 {
+  font-size: 1.25em;
+}
+h3 {
+  font-size: 1.125em;
+}
+h2,
+h3 {
+  margin: 2em 0;
+}
+h4,
+h5,
+h6 {
+  font-size: 1em;
+  margin: 1em 0;
+}
+
+strong {
+  font-weight: 600;
+}
+
+/**
+  * Set `margin-bottom` to maintain vertical rhythm
+  */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+ul,
+ol,
+dl,
+figure,
+// iframe,
+video,
+hr,
+details,
+%vertical-rhythm {
+  margin-bottom: calc($spacing-unit / 3 * 2);
+}
+
+/* iframe {
+  display: block;
+  margin: calc($spacing-unit / 2) auto;
+} */
+
+/**
+  * Images
+  */
+img {
+  max-width: 100%;
+  display: block;
+  margin: 0 auto;
+  // vertical-align: middle;
+  // margin-bottom: $spacing-unit / 2;
+}
+
+html.dark {
+  body {
+    background-color: rgb(20, 20, 20);
+    color: rgba(229, 231, 235, 1);
+  }
+  a {
+    color: $text-color-dark;
+  }
+}
+
+body {
+  background-color: rgb(247, 247, 247);
+  color: rgba(55, 65, 81, 1);
+}
+/* #app {
+  padding: 40px 0 60px 0;
+} */
+
+a {
+  color: lighten($text-color, 10%);
+  text-decoration: none;
+  &:hover {
+    border-bottom: solid 1px $grey-color;
+  }
+}
+
+button {
+  cursor: pointer;
+}
