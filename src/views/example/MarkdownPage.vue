@@ -16,7 +16,7 @@ const router = useRouter();
 
 const size = ref<number>(0);
 
-const AsyncComp = defineAsyncComponent(() => import(`../../components/${route.path.slice(1)}.md`));
+const AsyncComp = defineAsyncComponent(() => import(`../../post/${route.path.slice(1)}.md`));
 
 watch(locale, (lang) => {
   router.push(`/${lang.slice(0, 2)}${route.path.slice(1).slice(2)}`);

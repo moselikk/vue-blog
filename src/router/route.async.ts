@@ -1,7 +1,7 @@
 // 需要鉴权的业务路由
 import { RouteRecordRaw } from 'vue-router';
 
-const metaRouters = import.meta.glob('@/components/*.md', { eager: true }) as any;
+const metaRouters = import.meta.glob('@/post/*.md', { eager: true }) as any;
 
 const asyncRoutes: Array<RouteRecordRaw> = [
   {

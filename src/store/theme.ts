@@ -7,6 +7,7 @@ const theme = defineStore({
     return {
       themeType: '亮蓝色',
       themeColor: '#2080F0FF',
+      postRoutes: [] as string[],
     };
   },
   // 等同于vuex的getter
@@ -19,6 +20,9 @@ const theme = defineStore({
     // actions可以用async做成异步形式
     setThemeType(type: string) {
       this.themeType = type;
+    },
+    setPostRoutes(type: Array<string>) {
+      this.postRoutes = type;
     },
   },
 });

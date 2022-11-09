@@ -16,7 +16,8 @@
 <script setup lang="ts">
 import * as _ from 'lodash';
 
-const posts = import.meta.glob('@/components/*.md', { eager: true }) as any;
+const posts = import.meta.glob('@/post/*.md', { eager: true }) as any;
+
 const postList = ref(<{ [index: number]: string[] }>{});
 const years = ref([]);
 
@@ -36,7 +37,7 @@ function sortPostListYear(list: any) {
   const tempYears = [
     ...new Set(
       list.map((item: string) => {
-        return Number(item.slice(16, 20)) ? Number(item.slice(16, 20)) : 2018;
+        return Number(item.slice(10, 14)) ? Number(item.slice(10, 14)) : 2018;
       }),
     ),
   ];
@@ -50,12 +51,12 @@ function sortPostList(list: any) {
   years.value.forEach((year) => {
     postList.value[year] = [];
     list.forEach((item: any) => {
-      if (Number(item.slice(16, 20)) === year) {
+      if (Number(item.slice(10, 14)) === year) {
         postList.value[year].push(item);
       }
     });
     postList.value[year].sort((a, b) => {
-      return Number(b.slice(21, 23) + b.slice(24, 26)) - Number(a.slice(21, 23) + a.slice(24, 26));
+      return Number(a.slice(15, 17) + a.slice(18, 10)) - Number(b.slice(15, 17) + b.slice(18, 20));
     });
   });
 }
@@ -97,17 +98,20 @@ html.dark {
     width: 100%;
   }
 }
+
 .list {
   box-sizing: border-box;
   /* border: 1px solid black; */
   /* width: 56rem; */
   margin: 0 auto;
 }
+
 .post-list {
   margin: 0 40px;
   list-style-position: inside;
   /* margin-left: 2em; */
   color: $text-color;
+
   @include media-query-max($on-screen) {
     padding-left: 0;
   }
