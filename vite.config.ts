@@ -35,11 +35,11 @@ export default defineConfig((env) => {
       },
     },
     build: {
-      reportCompressedSize: false,
+      /* reportCompressedSize: false,
       // 消除打包大小超过500kb警告
       chunkSizeWarningLimit: 2000,
       minify: 'esbuild',
-      assetsDir: 'static/assets',
+      assetsDir: 'static/assets', */
       // 静态资源打包到dist下的不同目录
       /* rollupOptions: {
         output: {
@@ -48,6 +48,30 @@ export default defineConfig((env) => {
           assetFileNames: 'static/[ext]/[name]-[hash].[ext]',
         },
       }, */
+      // 禁用 gzip 压缩大小报告，提高构建性能
+      reportCompressedSize: false,
+      // 规定触发警告的 chunk 为 2000kbs
+      chunkSizeWarningLimit: 2000,
+      // 打包移除 console
+      /* terserOptions: {
+        compress: {
+          drop_console: false,
+          pure_funcs: ['console.log', 'console.info'],
+          drop_debugger: true,
+        },
+      }, */
+      // 指定混淆器为 Esbuild
+      minify: 'esbuild',
+      // 指定生成静态资源的存放路径
+      assetsDir: 'static/assets',
+      // 静态资源打包到dist下的不同目录
+      rollupOptions: {
+        output: {
+          chunkFileNames: 'static/js/[name]-[hash].js',
+          entryFileNames: 'static/js/[name]-[hash].js',
+          assetFileNames: 'static/[ext]/[name]-[hash].[ext]',
+        },
+      },
     },
     css: {
       preprocessorOptions: {
