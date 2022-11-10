@@ -8,7 +8,6 @@
 - 📦 [组件自动按需加载](https://github.com/antfu/unplugin-vue-components) - 自动按需注册组件, 无需 import
 - 📥 [API 自动按需加载](https://github.com/antfu/unplugin-auto-import) - 无需手动 import 进行引入
 - 🍍 [Pinia 状态管理](https://pinia.esm.dev/) - 你将会喜欢上的 Vue Store
-- 🎨 [Windi CSS](https://github.com/windicss/windicss) - 下一代实用的原子 css 框架
 - 😃 [icones](https://github.com/antfu/unplugin-icons) - 强大的图标库，各种图标集为你所用
 - 🌍 [I18n 国际化开箱即用](./locales) - 想要翻译？是的，都可以！
 - 👩‍🎨 [NProgress](https://github.com/rstacruz/nprogress) - 页面加载进度反馈

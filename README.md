@@ -8,7 +8,6 @@
 - 📦 [Components auto importing](https://github.com/antfu/unplugin-vue-components) - Automatically register components on demand without import
 - 📥 [Auto import APIs](https://github.com/antfu/unplugin-auto-import) - Automatically import APIs
 - 🍍 [State Management via Pinia](https://pinia.esm.dev/) - The Vue Store that you will enjoy using
-- 🎨 [Windi CSS](https://github.com/windicss/windicss) - next generation utility-first CSS framework
 - 😃 [icones](https://github.com/antfu/unplugin-icons) - Powerful Icon Library, Use icons from any icon sets
 - 🌍 [I18n ready](./locales) - Want to translate? Yes, you can!
 - 👩‍🎨 [NProgress](https://github.com/rstacruz/nprogress) - Page loading progress feedback
@@ -21,8 +20,6 @@
 
 ### UI Frameworks
 
-- [Windi CSS](https://github.com/windicss/windicss) (On-demand [TailwindCSS](https://tailwindcss.com/)) - lighter and faster, with a bunch of additional features
-  - [Windi CSS Typography](https://windicss.org/plugins/official/typography.html)
 - [Element Plus](https://github.com/element-plus/element-plus) - A powerful Vue.js 3 UI Library
 
 ### Icons
@@ -60,11 +57,6 @@
   - [Volar](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.volar) -Vue 3 IDE support
   - [Iconify IntelliSense](https://marketplace.visualstudio.com/items?itemName=antfu.iconify) - Icon inline display and autocomplete
   - [i18n Ally](https://marketplace.visualstudio.com/items?itemName=lokalise.i18n-ally) - All in one i18n support
-  - [Windi CSS Intellisense](https://marketplace.visualstudio.com/items?itemName=voorjaar.windicss-intellisense) - IDE support for Windi CSS
   - [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) - Code quality and rule checking
   - [Prettier - Code formatter](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) - Focus on code formatting and beautifying code
   - [EditorConfig for VS Code](https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig) - Coding style check
-
-## Thanks
-
-This template has some features inspired by [Vitesse](https://github.com/antfu/vitesse) ❤
