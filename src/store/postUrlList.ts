@@ -2,7 +2,7 @@ import { defineStore } from 'pinia';
 
 const postUrlList = defineStore({
   // 这里的id必须为唯一ID
-  id: 'theme',
+  id: 'postList',
   state: () => {
     return {
       postRoutes: [] as string[],

@@ -29,7 +29,7 @@ const asyncRoutes: Array<RouteRecordRaw> = [
       title: 'Template configuration process',
       icon: '',
     },
-    component: () => import('@/views/project/index.vue'),
+    component: () => import('@/views/project/test.vue'),
   },
 ];
 

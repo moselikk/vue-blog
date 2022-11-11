@@ -1,56 +1,56 @@
 <template>
-  <div ref="threeDemo"></div>
+  <div ref="threeDemo" class="three"></div>
 </template>
 
 <script setup lang="ts">
 import * as THREE from 'three';
+import { isDark } from '@/utils/dark';
 
 const threeDemo = <any>ref();
 
 // init
-function initThree() {
-  // 创建场景
-  const scene = new THREE.Scene();
+// 创建场景
+const scene = new THREE.Scene();
 
-  // 创建相机
-  const camera = new THREE.PerspectiveCamera(70, window.innerWidth / window.innerHeight, 0.01, 10);
-  camera.position.z = 1;
+// 创建相机
+const camera = new THREE.PerspectiveCamera(70, window.innerWidth / window.innerHeight, 0.01, 10);
+camera.position.z = 1;
 
-  // 创建渲染器
-  const renderer = new THREE.WebGLRenderer({ antialias: true });
-  renderer.setSize(window.innerWidth, window.innerHeight);
-  renderer.setClearColor(0xf7f7f7);
+// 创建渲染器
+const renderer = new THREE.WebGLRenderer({ antialias: true });
+renderer.setSize(window.innerWidth, window.innerHeight);
+renderer.setClearColor(isDark.value ? 0x141414 : 0xf7f7f7);
 
-  // 创建立方体
-  const geometry = new THREE.BoxGeometry(0.2, 0.2, 0.2);
-  // const material = new THREE.MeshNormalMaterial();
-  const material = new THREE.MeshPhongMaterial({ color: 0x44aa88 });
-  // 立方体添加至场景
-  const mesh = new THREE.Mesh(geometry, material);
-  scene.add(mesh);
+// 创建立方体
+const geometry = new THREE.BoxGeometry(0.2, 0.2, 0.2);
+// const material = new THREE.MeshNormalMaterial();
+const material = new THREE.MeshPhongMaterial({ color: 0x44aa88 });
+// 立方体添加至场景
+const mesh = new THREE.Mesh(geometry, material);
+scene.add(mesh);
 
-  function animate() {
-    requestAnimationFrame(animate);
-    // 转动
-    mesh.rotation.x += 0.01;
-    mesh.rotation.y += 0.01;
-    // 渲染
-    renderer.render(scene, camera);
-  }
-  animate();
-
-  const color = 0xffffff;
-  const intensity = 1;
-  const light = new THREE.DirectionalLight(color, intensity);
-  light.position.set(-1, 2, 4);
-  scene.add(light);
-
-  // 添加到页面
-  // document.body.appendChild(renderer.domElement);
-  nextTick(() => {
-    threeDemo.value.appendChild(renderer.domElement);
-  });
+function animate() {
+  requestAnimationFrame(animate);
+  // 转动
+  mesh.rotation.x += 0.01;
+  mesh.rotation.y += 0.01;
+  // 渲染
+  renderer.render(scene, camera);
 }
+animate();
+
+const color = 0xffffff;
+const intensity = 1;
+const light = new THREE.DirectionalLight(color, intensity);
+light.position.set(-1, 2, 4);
+scene.add(light);
+
+// 添加到页面
+// document.body.appendChild(renderer.domElement);
+nextTick(() => {
+  threeDemo.value.appendChild(renderer.domElement);
+});
+console.log('执行了');
 
 // 窗口比例大小改变，模型渲染位置大小不变
 // 在窗口调整大小时保持场景比例不变
@@ -120,9 +120,17 @@ function onWindowResize( event ) {
 
  */
 
+watch(isDark, () => {
+  renderer.setClearColor(isDark.value ? 0x141414 : 0xf7f7f7);
+});
+
 onMounted(() => {
-  initThree();
+  // initThree();
 });
 </script>
 
-<style scoped></style>
+<style scoped>
+.three {
+  overflow-y: hidden;
+}
+</style>
