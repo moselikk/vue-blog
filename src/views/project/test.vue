@@ -92,12 +92,24 @@ function main() {
   }
 
   requestAnimationFrame(render);
+  function aaa() {
+    renderer.setClearColor(isDark.value ? 0x141414 : 0xf7f7f7);
+  }
 
   console.log('执行了');
+  return aaa;
 }
+const ccc = ref();
+
+watch(isDark, () => {
+  ccc.value();
+});
 
 onMounted(() => {
   main();
+  nextTick(() => {
+    ccc.value = main();
+  });
 });
 </script>
 
