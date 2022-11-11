@@ -39,43 +39,23 @@ export default defineConfig((env) => {
       },
     },
     build: {
-      /* reportCompressedSize: false,
-      // 消除打包大小超过500kb警告
-      chunkSizeWarningLimit: 2000,
-      minify: 'esbuild',
-      assetsDir: 'static/assets', */
-      // 静态资源打包到dist下的不同目录
-      /* rollupOptions: {
-        output: {
-          chunkFileNames: 'static/js/[name]-[hash].js',
-          entryFileNames: 'static/js/[name]-[hash].js',
-          assetFileNames: 'static/[ext]/[name]-[hash].[ext]',
-        },
-      }, */
       // 禁用 gzip 压缩大小报告，提高构建性能
       reportCompressedSize: false,
       // 规定触发警告的 chunk 为 2000kbs
       chunkSizeWarningLimit: 2000,
-      // 打包移除 console
-      /* terserOptions: {
-        compress: {
-          drop_console: false,
-          pure_funcs: ['console.log', 'console.info'],
-          drop_debugger: true,
-        },
-      }, */
       // 指定混淆器为 Esbuild
       minify: 'esbuild',
       // 指定生成静态资源的存放路径
       assetsDir: 'static/assets',
-      // 静态资源打包到dist下的不同目录
       rollupOptions: {
         output: {
+          // 打包后文件名去除 _ 解决 Gitpags 404
           sanitizeFileName(fileName) {
             const match = DRIVE_LETTER_REGEX.exec(fileName);
             const driveLetter = match ? match[0] : '';
             return driveLetter + fileName.slice(driveLetter.length).replace(INVALID_CHAR_REGEX, '');
           },
+          // 静态资源打包到dist下的不同目录
           chunkFileNames: 'static/js/[name]-[hash].js',
           entryFileNames: 'static/js/[name]-[hash].js',
           assetFileNames: 'static/[ext]/[name]-[hash].[ext]',

@@ -11,6 +11,11 @@
         <i-ri-article-line class="icon-footer" />
       </button>
     </el-tooltip>
+    <el-tooltip :content="t('template process')" placement="right">
+      <button class="icon-btn mx-2 !outline-none" @click="handleLink('/project')">
+        <i-mdi-content-duplicate class="icon-footer" />
+      </button>
+    </el-tooltip>
 
     <el-tooltip :content="isDark ? t('change light') : t('change dark')" placement="right">
       <button class="icon-btn mx-2 !outline-none" @click="toggleDark()">
@@ -22,12 +27,6 @@
     <el-tooltip :content="t('change lang')" placement="right">
       <button class="icon-btn mx-2" @click="toggleLocales()">
         <i-la-language class="icon-footer" />
-      </button>
-    </el-tooltip>
-
-    <el-tooltip :content="t('template process')" placement="right">
-      <button class="icon-btn mx-2 !outline-none" @click="handleLinkUrl('blog')">
-        <i-mdi-content-duplicate class="icon-footer" />
       </button>
     </el-tooltip>
 

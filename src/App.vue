@@ -7,7 +7,7 @@ const locale = zhCn;
 <template>
   <div>
     <Teleport to="body">
-      <TheFooter></TheFooter>
+      <Navigation></Navigation>
     </Teleport>
     <el-config-provider :locale="locale">
       <router-view></router-view>

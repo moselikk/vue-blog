@@ -22,6 +22,15 @@ const asyncRoutes: Array<RouteRecordRaw> = [
     },
     component: () => import('@/views/list/index.vue'),
   },
+  {
+    path: '/project',
+    name: 'project',
+    meta: {
+      title: 'Template configuration process',
+      icon: '',
+    },
+    component: () => import('@/views/project/index.vue'),
+  },
 ];
 
 const routeList = Object.keys(metaRouters);
