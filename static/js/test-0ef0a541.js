@@ -1,4 +1,4 @@
-import{d as va,r as Ma,k as Sa,s as ya,af as ba,g as wa,b2 as Ui,o as Ta}from"./index-6ce7163d.js";import{_ as Ea}from"./plugin-vueexport-helper-d7c00f7c.js";/**
+import{d as va,r as Ma,k as Sa,s as ya,af as ba,g as wa,aP as Ui,o as Ta}from"./index-ec4c50da.js";import{_ as Ea}from"./plugin-vueexport-helper-d7c00f7c.js";/**
  * @license
  * Copyright 2010-2022 Three.js Authors
  * SPDX-License-Identifier: MIT
